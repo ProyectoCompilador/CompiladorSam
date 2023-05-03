@@ -28,7 +28,8 @@ namespace Scann
             
 
             public static int MAXTOKENLEN = 40;
-            public static char[] tokenString = new char[MAXTOKENLEN + 1];
+            public static List<char> tokenString = new List<char>();
+            
             public static string linea;
 
 
@@ -246,11 +247,13 @@ namespace Scann
                         case StateType.EENTEROS:
                             if (Char.IsDigit(c))
                             {
-                                state = StateType.EENTEROS;
+                                //state = StateType.EENTEROS;
+                                tokenString.Add(c);
                             }
                             else if (c == '.')
                             {
                                 state = StateType.EPOSIBLENUMREAL;
+                                tokenString.Add(c);
                                 save = Globals.TRUE;
                             }
                             else
@@ -259,7 +262,7 @@ namespace Scann
                                 currentToken = Globals.Global.TokenType.ENTERO;
                                 save = Globals.FALSE;
                                 //concatenar c
-
+                                tokenString.Add(c);
                             }
                             break;
 
@@ -267,7 +270,7 @@ namespace Scann
                             if (Char.IsDigit(c)) {
                                 state = StateType.EENTEROREAL;
                                 //concatenar c
-
+                                tokenString.Add(c);
                             }
                             else
                             {
@@ -281,7 +284,7 @@ namespace Scann
                             {
                                 state = StateType.EENTEROREAL;
                                 //concatenar c
-
+                                tokenString.Add(c);
                             }
                             else
                             {
@@ -296,8 +299,9 @@ namespace Scann
                             {
                                 state=StateType.EIDENTIFICADOR;
                                 //concatenar c
-
-                            }else 
+                                tokenString.Add(c);
+                            }
+                            else 
                             {
                                 //currentToken = reservedLookup(tokenString);
                                 save = Globals.FALSE;
@@ -312,7 +316,7 @@ namespace Scann
                                 state= StateType.HECHO;
                                 //concatenar c
                                 currentToken = Globals.Global.TokenType.ASIGNACION;
-
+                                tokenString.Add(c);
 
                             }
                             else
@@ -327,6 +331,7 @@ namespace Scann
                             {
                                 state = StateType.HECHO;
                                 //concatenar c
+                                tokenString.Add(c);
                                 currentToken = Globals.Global.TokenType.PLUSPLUS;
                             }
                             else
@@ -343,6 +348,7 @@ namespace Scann
                             {
                                 state= StateType.HECHO;
                                 //concatenar c
+                                tokenString.Add(c);
                                 currentToken = Globals.Global.TokenType.MENOSMENOS;
                             }
                             else
@@ -358,6 +364,7 @@ namespace Scann
                             {
                                 state = StateType.EMAYORIGUAL;
                                 //concatenar c
+                                tokenString.Add(c);
                                 currentToken = Globals.Global.TokenType.MAYOREQ;
                             }
                             else
@@ -373,12 +380,14 @@ namespace Scann
                             {
                                 state = StateType.HECHO;
                                 //concatenar c
+                                tokenString.Add(c);
                                 currentToken = Globals.Global.TokenType.MENOREQ;
                             }
                             else if(c=='>')
                             {
                                 state = StateType.HECHO;
                                 //concatenar c
+                                tokenString.Add(c);
                                 currentToken = Globals.Global.TokenType.DIFERENTEDE;
                             }
                             else

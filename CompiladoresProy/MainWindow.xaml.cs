@@ -104,22 +104,31 @@ namespace CompiladoresProy
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //prueba de listas 
-
-
+            //char[] l = {'a','c','r','w','q'};
+            //List<char> listOfStrings = new List<char>();
+            //foreach(char c in l)
+            //{
+            //    listOfStrings.Add(c);
+            //}
+            //foreach(char c in listOfStrings)
+            //{
+            //    this.text.Text += c;
+            //}
+           
             //Prueba de Equals
             //if (String.Equals("Hola", "hola"))
             //{
             //    this.text.Text = "Son iguales";
             //}
             //else { this.text.Text = "No son iguales"; }
-            
+
             //Prueba Leer archivo de texto
-           /*string[] lines= Scan.Scaan.getNextChar();
-            foreach (string line in lines)
-            {
-                // Use a tab to indent each line of the file.
-                this.text.Text = line+"\n";
-            }*/
+            /*string[] lines= Scan.Scaan.getNextChar();
+             foreach (string line in lines)
+             {
+                 // Use a tab to indent each line of the file.
+                 this.text.Text = line+"\n";
+             }*/
 
             //Crear Archivo de Texto
 
