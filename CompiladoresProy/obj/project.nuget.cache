@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "HT4yivzpAZx7Tr/x+k0RYlfrnOsjSJO1d5B26T9iJSQhKmcUxbCfImrGOzTQAMxN9YL9h+/utDG8DJwkaC8dUw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\itzia\\source\\repos\\CompiladoresProy\\CompiladoresProy\\CompiladoresProy.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\itzia\\.nuget\\packages\\avalonedit\\6.3.0.90\\avalonedit.6.3.0.90.nupkg.sha512"
+  ],
+  "logs": []
+}
